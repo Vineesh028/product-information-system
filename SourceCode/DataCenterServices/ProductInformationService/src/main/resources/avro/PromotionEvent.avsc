@@ -1,0 +1,176 @@
+[
+{
+  "namespace": "com.product.information.avro.model",
+  "type": "record",
+  "name": "Brand",
+  "fields": [
+  	{
+      "name": "brandId",
+      "type": "long"
+    },
+    {
+      "name": "brandName",
+      "type": "string"
+    },
+    {
+      "name": "imageUrl",
+      "type": "string"
+    }
+  ]
+},
+
+{
+  "namespace": "com.product.information.avro.model",
+  "type": "record",
+  "name": "Size",
+  "fields": [
+  	{
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "sizeUS",
+      "type": "string"
+    },
+    {
+      "name": "sizeEU",
+      "type": "string"
+    }
+  ]
+},
+{
+  "namespace": "com.product.information.avro.model",
+  "type": "record",
+  "name": "Quantity",
+  "fields": [
+   {
+      "name": "id",
+      "type": "long"
+    },
+    {
+      "name": "quantityTotal",
+      "type": "int"
+    },
+    {
+      "name": "quantityAvailable",
+      "type": "int"
+    }
+  ]
+},
+{
+  "namespace": "com.product.information.avro.model",
+  "type": "record",
+  "name": "Product",
+  "fields": [
+    {
+      "name": "productId",
+      "type": "long"
+    },
+    {
+      "name": "productName",
+      "type": "string"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "brand",
+      "type": "Brand"
+    },
+     {
+      "name": "material",
+      "type": "string"
+    },
+     {
+      "name": "size",
+      "type": "Size"
+    },
+     {
+      "name": "colour",
+      "type": "string"
+    },
+     {
+      "name": "ageGroup",
+      "type": "string"
+    },
+     {
+      "name": "category",
+      "type": "string"
+    },
+    
+     {
+      "name": "imageUrl",
+      "type": "string"
+    },
+       {
+      "name": "price",
+      "type": "float"
+    },
+    
+     {
+      "name": "country",
+      "type": "string"
+    },
+    
+     {
+      "name": "quantity",
+      "type": "Quantity"
+    }
+  ]
+},
+{
+  "namespace": "com.product.information.avro.model",
+  "type": "record",
+  "name": "Promotion",
+  "fields": [
+    {
+      "name": "promotionId",
+      "type": "long"
+    },
+    {
+      "name": "productList",
+      "type": {
+      "type": "array",  
+      "items":"Product"     
+      }
+    },
+    {
+      "name": "targetGroup",
+      "type": "string"
+    },
+    {
+      "name": "promotionMessage",
+      "type": "string"
+    },
+    {
+      "name": "imageUrls",
+      "type": 
+      {
+      "type": "array",  
+      "items":"string"     
+      }
+    }
+  ]
+},
+{
+  "namespace": "com.product.information.avro.model",
+  "type": "record",
+  "name": "PromotionEvent",
+  "fields": [
+    {
+      "name": "eventType",
+      "type": "string"
+    },
+    {
+      "name": "message",
+      "type": "string"
+    },
+    {
+      "name": "promotion",
+      "type": "Promotion"
+    }
+  ]
+}
+
+]

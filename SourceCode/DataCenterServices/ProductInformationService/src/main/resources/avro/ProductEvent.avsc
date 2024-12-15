@@ -1,0 +1,118 @@
+{
+  "type" : "record",
+  "name" : "ProductEvent",
+  "namespace" : "com.product.information.avro.model",
+  "fields" : [ {
+    "name" : "eventType",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "message",
+    "type" : [ "null", "string" ]
+  }, {
+    "name" : "product",
+    "type" : [ "null", {
+      "type" : "record",
+      "name" : "Product",
+      "fields" : [ {
+        "name" : "productId",
+        "type" : {
+          "type" : "long",
+          "java-class" : "java.lang.Long"
+        }
+      }, {
+        "name" : "productName",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "description",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "brand",
+        "type" : [ "null", {
+          "type" : "record",
+          "name" : "Brand",
+          "fields" : [ {
+            "name" : "brandId",
+            "type" : {
+              "type" : "long",
+              "java-class" : "java.lang.Long"
+            }
+          }, {
+            "name" : "brandName",
+            "type" : [ "null", "string" ]
+          }, {
+            "name" : "imageUrl",
+            "type" : [ "null", "string" ]
+          } ]
+        } ]
+      }, {
+        "name" : "material",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "size",
+        "type" : [ "null", {
+          "type" : "record",
+          "name" : "Size",
+          "fields" : [ {
+            "name" : "id",
+            "type" : {
+              "type" : "long",
+              "java-class" : "java.lang.Long"
+            }
+          }, {
+            "name" : "sizeUS",
+            "type" : [ "null", "string" ]
+          }, {
+            "name" : "sizeEU",
+            "type" : [ "null", "string" ]
+          } ]
+        } ]
+      }, {
+        "name" : "colour",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "ageGroup",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "category",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "imageUrl",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "price",
+        "type" : {
+          "type" : "float",
+          "java-class" : "java.lang.Float"
+        }
+      }, {
+        "name" : "country",
+        "type" : [ "null", "string" ]
+      }, {
+        "name" : "quantity",
+        "type" : [ "null", {
+          "type" : "record",
+          "name" : "Quantity",
+          "fields" : [ {
+            "name" : "id",
+            "type" : {
+              "type" : "long",
+              "java-class" : "java.lang.Long"
+            }
+          }, {
+            "name" : "quantityTotal",
+            "type" : {
+              "type" : "int",
+              "java-class" : "java.lang.Integer"
+            }
+          }, {
+            "name" : "quantityAvailable",
+            "type" : {
+              "type" : "int",
+              "java-class" : "java.lang.Integer"
+            }
+          } ]
+        } ]
+      } ]
+    } ]
+  } ]
+}
