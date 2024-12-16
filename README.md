@@ -5,7 +5,7 @@
 
 ![PIMnew](https://github.com/user-attachments/assets/86767ee3-735b-4fd6-b2a7-3f20f80515b8)
 
-Services
+### Services
 1. Product source service
 Provides the APIs to get the product details from various sources.
 Receives the unstructured data and store it into MongoDB. This service also pushes the
@@ -27,7 +27,7 @@ service through websocket.
 Provides APIs to get promotion data. It receives promotion information from product
 information service via Kafka and stores it in PostgresDB.
 
-Dashboard and User interfaces
+### Dashboard and User interfaces
 1. Product information dashboard
 User interface to change and publish product and promotion information
 2. User portal App
