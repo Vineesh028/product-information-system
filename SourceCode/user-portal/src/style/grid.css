@@ -1,0 +1,48 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Multiple items in rows */
+    gap: 16px; /* Space between items */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Styling for each grid item */
+  .grid-item {
+    display: flex;
+    flex-direction: column; /* Stack content vertically in rows */
+    align-items: flex-start; /* Align content to the start of the row */
+    background-color: #3498db;
+    color: white;
+    padding: 10px;
+    height: 500px;
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: left;
+  }
+
+  .custom-image {
+    width: 100px;  /* Fixed width in pixels */
+    height: 150px; /* Fixed height in pixels */
+  }
+  
+  /* Add internal row-like content styling */
+  .grid-item div {
+    margin: 4px 0; /* Space between vertically stacked internal elements */
+    font-size: 0.9rem;
+  }
+  
+  /* Hover effect */
+  .grid-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Optional responsiveness */
+  @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    }
+  }
+  
