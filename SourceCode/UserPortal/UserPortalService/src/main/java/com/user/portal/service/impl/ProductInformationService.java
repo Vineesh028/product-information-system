@@ -42,7 +42,7 @@ public class ProductInformationService implements IProductInformationService {
 
 	@Override
 	public List<ProductDto> getProductsByName(String name) {
-		List<ProductEntity> productEntities = productRepository.findByProductName(name);
+		List<ProductEntity> productEntities = productRepository.findByProductNameIgnoreCaseContaining(name);
 		return productEntities.stream().map(e -> ProductMapper.mapToProductDto(e, new ProductDto())).toList();
 	}
 
@@ -71,10 +71,11 @@ public class ProductInformationService implements IProductInformationService {
 	@Override
 	public void publishChanges(ProductEvent event) {
 
-		ProductDto productDto = new ProductDto();
-		BeanUtils.copyProperties(event.getProduct(), productDto);
-
-		updateProductDetails(productDto.getProductId(), productDto);
+//		ProductDto productDto = new ProductDto();
+//		BeanUtils.copyProperties(event.getProduct(), productDto);
+//
+//		updateProductDetails(productDto.getProductId(), productDto);
+		
 		TextMessage message = new TextMessage();
 
 		message.setMessage(event.getMessage());

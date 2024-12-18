@@ -10,6 +10,6 @@ import com.user.portal.entity.ProductEntity;
 @Repository
 public interface ProductRepository extends JpaRepository<ProductEntity, Long>{
 	
-	List<ProductEntity> findByProductName(String productName);
+	List<ProductEntity> findByProductNameIgnoreCaseContaining(String productName);
 
 }
